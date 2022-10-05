@@ -1,0 +1,24 @@
+# [estimated step sizes]
+
+# mm per increment
+X_step_size: 0.161
+Y_step_size: 0.161
+Z_step_size: 0.04
+
+# degrees per increment
+CP_step_size: 0.0555
+CY_step_size: 0.225
+
+# safe max values for all DOFs
+X_max = 1100
+Y_max = 1600
+Z_max = 6200
+CP_max = 1040
+CY_max = 310
+
+# estimated mid points
+X_mid = 550
+Y_mid = 800
+Z_mid = 3100
+CP_mid = 520
+CY_mid = 155
