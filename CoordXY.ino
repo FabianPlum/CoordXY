@@ -303,10 +303,10 @@ void loop() {
             glob_y  = strtoul(sPtr [3], NULL, 0) *16;
             
             //set global Z position (axis is inverted)
-            glob_z  = -strtoul(sPtr [5], NULL, 0) *16;
+            glob_z  = strtoul(sPtr [5], NULL, 0) *16;
 
             //set global CP angle
-            glob_cp = -strtoul(sPtr [7], NULL, 0) *16;
+            glob_cp = strtoul(sPtr [7], NULL, 0) *16;
 
             //set global CY angle
             glob_cy = strtoul(sPtr [9], NULL, 0) *16;
@@ -434,7 +434,7 @@ void loop() {
             Serial.println("Sounds like you wanna go home.");
 
             stepper_Z.setSpeedInStepsPerSecond(75*16);
-            stepper_Z.setupMoveInSteps(home_z);
+            stepper_Z.setupMoveInSteps(-home_z);
             
             while(!(digitalRead(endstop_Z_min) == LOW))
             {
@@ -465,7 +465,7 @@ void loop() {
             Serial.println("Sounds like you wanna go home.");
 
             stepper_CP.setSpeedInStepsPerSecond(50*16);
-            stepper_CP.setupMoveInSteps(2000*16);
+            stepper_CP.setupMoveInSteps(-2000*16);
             
             while(!(digitalRead(endstop_CP_min) == LOW))
             {
